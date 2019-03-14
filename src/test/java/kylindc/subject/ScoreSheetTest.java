@@ -26,5 +26,6 @@ public class ScoreSheetTest {
         klass.addStudent(li);
         ScoreSheet scoreSheet = new ScoreSheet(studentIds, klass);
         System.out.println(scoreSheet.genScoreSheet());
+        System.out.println(klass.getStudentsByIds(studentIds));
     }
 }

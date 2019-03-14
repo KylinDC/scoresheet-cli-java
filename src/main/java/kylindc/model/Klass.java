@@ -33,6 +33,14 @@ public class Klass {
         return null;
     }
 
+    public List<Student> getStudentsByIds(String[] ids) {
+        List<Student> students = new ArrayList<>();
+        for (String id : ids) {
+            students.add(getStudentById(id));
+        }
+        return students.stream().filter(Objects::nonNull).collect(Collectors.toList());
+    }
+
     public Set<Student> getStudents() {
         return this.students;
     }
