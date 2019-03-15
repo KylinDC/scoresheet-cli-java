@@ -7,6 +7,7 @@ import main.java.kylindc.model.subject.Chinese;
 import main.java.kylindc.model.subject.English;
 import main.java.kylindc.model.subject.Math;
 import main.java.kylindc.model.subject.Programing;
+import main.java.kylindc.service.Parser;
 
 public class ScoreSheetTest {
     public static void main(String[] args) {
@@ -27,5 +28,6 @@ public class ScoreSheetTest {
         ScoreSheet scoreSheet = new ScoreSheet(studentIds, klass);
         System.out.println(scoreSheet.genScoreSheet());
         System.out.println(klass.getStudentsByIds(studentIds));
+        System.out.println(Parser.genStudentsByIds("01,02", klass));
     }
 }

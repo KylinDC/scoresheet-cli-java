@@ -33,12 +33,12 @@ public class Klass {
         return null;
     }
 
-    public List<Student> getStudentsByIds(String[] ids) {
-        List<Student> students = new ArrayList<>();
+    public Set<Student> getStudentsByIds(String[] ids) {
+        Set<Student> students = new HashSet<>();
         for (String id : ids) {
             students.add(getStudentById(id));
         }
-        return students.stream().filter(Objects::nonNull).collect(Collectors.toList());
+        return students.stream().filter(Objects::nonNull).collect(Collectors.toSet());
     }
 
     public Set<Student> getStudents() {

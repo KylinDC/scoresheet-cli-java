@@ -1,5 +1,6 @@
 package main.java.kylindc.service;
 
+import main.java.kylindc.model.Klass;
 import main.java.kylindc.model.Student;
 import main.java.kylindc.model.subject.Math;
 import main.java.kylindc.model.subject.*;
@@ -58,5 +59,13 @@ public class Parser {
             default:
                 return null;
         }
+    }
+
+    public static Set<Student> genStudentsByIds(String ids, Klass klass) {
+        String[] idArray = ids.split(",");
+        for (String id : idArray) {
+            id.trim();
+        }
+        return klass.getStudentsByIds(idArray);
     }
 }
